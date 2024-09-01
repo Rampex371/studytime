@@ -1,0 +1,101 @@
+html {
+    color: white;
+    background: url("./pic/chomusuke.jpeg");
+    background-size: cover;
+}
+hr {
+    margin-block: 10px;
+}
+h3 {
+    margin-left: 15px;
+}
+.topbar {
+    div {
+        display: inline;
+    }
+    .ver {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        color: #666;
+    }
+    #siteName {
+        display: inline-block;
+        width: fit-content;
+        margin: 10px;
+        padding: 4px 7px;
+        background: rgb(0, 0, 0, 0.3);
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+    #siteName:active {
+        padding: 4px 7px 4.25px 7.25px;
+        border: 1px solid whitesmoke;
+    }
+}
+.form {
+    margin-left: 30px;
+}
+.cell {
+    padding: 2px 15px;
+    font-size: 20px;
+}
+.btn1 {
+    display: inline;
+    width: 80px;
+    height: 30px;
+    margin: 10px 10px 20px 0px;
+    color: whitesmoke;
+    background: black;
+    border-radius: 4px;
+}
+.btn2 {
+    width: 90px;
+    height: 30px;
+    margin: 10px 10px 20px 0px;
+    color: white;
+    background: rgb(255, 255, 255, 0.2);
+    border: 3px solid white;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
+    border-radius: 5px;
+}
+.btn2:active {
+    border: 3px solid gray;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+}
+#menu2 {
+    display: none;
+    small {
+        display: block;
+    }
+    #info {
+        width: fit-content;
+        margin-block: 7px;
+        padding: 5px 50px 5px 10px;
+        text-align: left;
+        background: rgb(0, 155, 255, 0.1);
+        border-radius: 5px;
+        outline: 2px solid #0df;
+    }
+}
+#calender {
+    margin: 20px;
+    padding: 0px;
+    background: rgb(255, 255, 255, 0.2);
+    text-align: center;
+}
+input[type="number"] {
+    display: block;
+    height: 20px;
+    color: white;
+    font-size: 15px;
+    margin: 10px 0px 30px;
+    padding-left: 4px;
+    background: rgb(255, 255, 255, 0.1);
+    border: 2px solid whitesmoke;
+    border-left: 10px solid white;
+    border-radius: 2px;
+    outline: 2px solid rgb(0, 0, 0, 0.4);
+}
