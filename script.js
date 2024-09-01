@@ -27,15 +27,9 @@ function setup() {
         }
         time += val;
         day = [new Date().getDate(), val];
-        if (goal <= val) {
-            log[new Date().getDate()] = "⭕";
-            localStorage.setItem("log", JSON.stringify(log));
-            document.getElementById(`calen${new Date().getDate()}`).textContent = "⭕";
-        } else {
-            log[new Date().getDate()] = null;
-            localStorage.setItem("log", JSON.stringify(log));
-            document.getElementById(`calen${new Date().getDate()}`).textContent = "✖";
-        }
+        log[new Date().getDate()] = goal <= val? "⭕": "✖";
+        localStorage.setItem("log", JSON.stringify(log));
+        document.getElementById(`calen${new Date().getDate()}`).textContent = goal <= val? "⭕": "✖";
         localStorage.setItem("day", JSON.stringify(day));
         localStorage.setItem("studytime", time);
         console.log(`総合時間: ${time}`);
