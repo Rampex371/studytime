@@ -1,5 +1,5 @@
 const c = v => v || "失敗";
-const weeks = ['日', '月', '火', '水', '木', '金', '土'];
+const weeks = ["日", "月", "火", "水", "木", "金", "土"];
 let day = localStorage.getItem("day") || {};
 let goal = Number(localStorage.getItem("goaltime")) || 0;
 let time = Number(localStorage.getItem("studytime")) || 0;
@@ -31,6 +31,10 @@ function setup() {
             log[new Date().getDate()] = "⭕";
             localStorage.setItem("log", JSON.stringify(log));
             document.getElementById(`calen${new Date().getDate()}`).textContent = "⭕";
+        } else {
+            log[new Date().getDate()] = null;
+            localStorage.setItem("log", JSON.stringify(log));
+            document.getElementById(`calen${new Date().getDate()}`).textContent = "✖";
         }
         localStorage.setItem("day", JSON.stringify(day));
         localStorage.setItem("studytime", time);
