@@ -82,9 +82,11 @@ h3 {
 }
 #calender {
     margin: 20px;
-    padding: 0px;
     background: rgb(255, 255, 255, 0.2);
     text-align: center;
+    @media screen and (max-width: 600px) {
+        margin: 0;
+    }
 }
 input[type="number"] {
     display: block;
