@@ -22,18 +22,18 @@ function setup() {
         if (!val) return alert("学習時間を入力してください。");
         else if (val.length > 4) return alert("学習時間は時間表記で4文字以下にしてください(小数点含む)");
         else if (day[0] == new Date().getDate()) {
-            console.log(`今日の学習時間を上書きします。\n${day[1]} ⇒ ${val}`);
+            console.log(`昨日の学習時間を上書きします。\n${day[1]} ⇒ ${val}`);
             time -= day[1];
         }
         time += val;
         day = [new Date().getDate(), val];
-        log[new Date().getDate()] = goal <= val? "⭕": "✖";
+        log[new Date().getDate()-1] = goal <= val? "⭕": "✖";
         localStorage.setItem("log", JSON.stringify(log));
-        document.getElementById(`calen${new Date().getDate()}`).textContent = goal <= val? "⭕": "✖";
+        document.getElementById(`calen${new Date().getDate()-1}`).textContent = goal <= val? "⭕": "✖";
         localStorage.setItem("day", JSON.stringify(day));
         localStorage.setItem("studytime", time);
         console.log(`総合時間: ${time}`);
-        alert(`今日の学習時間を保存しました。\n総合時間: ${time}h`);
+        alert(`昨日の学習時間を保存しました。\n総合時間: ${time}h`);
         return true;
     });
     document.getElementById("setting").addEventListener("click", () => {
@@ -65,7 +65,7 @@ window.addEventListener("load", ()=> {
     try {
         let date = new Date();
         year = date.getFullYear();
-        month = date.getMonth()+1;
+        month = date.getMonth() + (new Date().getDate() == 1? 0: 1);
         sday = new Date(year, month-1, 1).getDay();
         ldate = new Date(year, month, 0).getDate();
     } catch(e) {
